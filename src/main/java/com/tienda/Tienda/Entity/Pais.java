@@ -4,16 +4,20 @@
  */
 package com.tienda.Tienda.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.io.Serializable;
-import org.springframework.data.annotation.Id;
 /**
  *
  * @author Neptune
  */
 @Entity
-@Table (name="paises")
-public class Pais implements Serializable{
+@Table(name = "paises")
+public class Pais implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -34,6 +38,5 @@ public class Pais implements Serializable{
     public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    
+
 }

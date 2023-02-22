@@ -4,10 +4,16 @@
  */
 package com.tienda.Tienda.Service;
 
+import com.tienda.Tienda.Entity.Persona;
+import java.util.*;
+
 /**
  *
  * @author Neptune
  */
-public class IPersonaService {
-    
+public interface IPersonaService {
+    public List<Persona> getAllPersona();
+    public Persona getPersonaById (long id);
+    public void savePersona(Persona persona);
+    public void delete(long id);
 }
