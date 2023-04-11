@@ -1,13 +1,9 @@
 <!Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <head></head>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/template::head"></head>
     <body>
-        <div>TODO write content</div>
+        <h1 th:text="#{cliente.titulo}"></h1><!-- Para traducción -->
+        <header th:replace="plantilla/template::header"></header>
         <div class="container">
 
             <div class="card-header bg-black text white"> </div>
@@ -70,5 +66,6 @@
                 </div>
             </div>
         </div>
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
