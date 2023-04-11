@@ -4,8 +4,10 @@
  */
 package com.tienda.Tienda.Entity;
 
-import jakarta.persistence.*;
+
 import java.io.*;
+import java.util.*;
+import javax.persistence.*;
 
 /**
  *
@@ -24,6 +26,11 @@ public class Persona implements Serializable{
     private String apellido2;
     private String telefono;
     private String email;
+    
+    private String password;
+    private int active;
+    private String roles = "";
+    private String permissions = "";
     
     @ManyToOne
     @JoinColumn(name="paises_id")
@@ -85,6 +92,50 @@ public class Persona implements Serializable{
     public void setPais(Pais pais) {
         this.pais = pais;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public String getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
+    }
     
+    public List<String> getRoleList(){
+        if(this.roles.length() > 0){
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+    }
     
+    public List<String> getPermissionsList(){
+        if(this.permissions.length() > 0){
+            return Arrays.asList(this.permissions.split(","));
+        }
+        return new ArrayList<>();
+    }
 }

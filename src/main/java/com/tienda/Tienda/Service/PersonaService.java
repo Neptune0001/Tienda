@@ -39,5 +39,10 @@ public class PersonaService implements IPersonaService {
     public void delete(long id) {
         personaRepository.deleteById(id);// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Persona findByNombre(String username) {
+        return personaRepository.findByNombre(username);
+    }
     
 }
